@@ -11,7 +11,7 @@ public class StepsDefinitionPHPtravel {
     private Login login;
     private IngresarMaquinaria ingresarMaquinaria;
 
-    @Given("^'PHP travel' page is loaded$")
+    @Given("^Load Page$")
     public void phpTravelPageIsLoaded() throws Throwable {
         login = LoadPage.loginPage();
         ingresarMaquinaria = LoadPage.registrarMaquinariaPage();
