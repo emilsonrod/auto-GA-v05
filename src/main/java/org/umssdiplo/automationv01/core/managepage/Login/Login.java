@@ -13,6 +13,9 @@ public class Login extends BasePage {
     @FindBy(name = "password")
     private WebElement passwordInputField;
 
+    @FindBy(name = "linkMaquinaria")
+    private WebElement linkMaquinaria;
+
     @FindBy(css = ".btn-primary.btn-block")
     private WebElement loginBtn;
 
@@ -22,5 +25,9 @@ public class Login extends BasePage {
         CommonEvents.setInputField(usernameInputField, username);
         CommonEvents.setInputField(passwordInputField, password);
         CommonEvents.clickButton(loginBtn);
+    }
+
+    public void GoToPage(){
+        CommonEvents.jsClickElement(linkMaquinaria);
     }
 }
