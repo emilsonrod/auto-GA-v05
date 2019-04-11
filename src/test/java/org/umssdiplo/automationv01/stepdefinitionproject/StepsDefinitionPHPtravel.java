@@ -27,8 +27,18 @@ public class StepsDefinitionPHPtravel {
         ingresarMaquinaria.GoToPage();
     }
 
+    @And("^got to 'catalogo'$")
+    public  void gotToCatalog() throws Throwable {
+        ingresarMaquinaria.GoToCatalog();
+    }
+
     @And("^submit form'$")
     public  void submitForm() throws Throwable {
         ingresarMaquinaria.LoadFields();
+    }
+
+    @And("^delete maquinaria$")
+    public void DeleteMaquinaria() throws Throwable {
+        ingresarMaquinaria.DeleteMaquinaria();
     }
 }
