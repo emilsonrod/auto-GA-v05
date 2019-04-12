@@ -38,6 +38,9 @@ public class IngresarMaquinaria extends BasePage {
     @FindBy(xpath = "//h1[text()='TOYOTA']/parent::div/following-sibling::button/span[text()='Eliminar']")
     private List<WebElement> buttonsDelete;
 
+    @FindBy(xpath = "//h1[text()='TOYOTA']/parent::div/following-sibling::button/span[text()='Editar']")
+    private List<WebElement> editButtons;
+
     public void GoToPage(){
         CommonEvents.jsClickElement(tabMaquinaria);
     }
@@ -60,7 +63,20 @@ public class IngresarMaquinaria extends BasePage {
         CommonEvents.clickButton(guardarBtn);
     }
 
+    public void LoadFieldsEdit(){
+
+        String marcaField = "Suzuki";
+        String precioField = "10000";
+        image.sendKeys("D://Diplomado/Modulo3/imagenes/grua1.jpg");
+        CommonEvents.setInputField(marca, "otra marca");
+        CommonEvents.setInputField(precio, precioField);
+        CommonEvents.clickButton(guardarBtn);
+    }
+
     public void DeleteMaquinaria(){
         CommonEvents.clickButton(buttonsDelete.get(0));
+    }
+    public void EditMaquinaria(){
+        CommonEvents.clickButton(editButtons.get(0));
     }
 }

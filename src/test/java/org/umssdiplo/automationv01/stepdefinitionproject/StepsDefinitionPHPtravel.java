@@ -41,4 +41,14 @@ public class StepsDefinitionPHPtravel {
     public void DeleteMaquinaria() throws Throwable {
         ingresarMaquinaria.DeleteMaquinaria();
     }
+
+    @And("^edit maquinaria$")
+    public void EditMaquinaria() throws Throwable {
+        ingresarMaquinaria.EditMaquinaria();
+    }
+
+    @And("^submit edit form$")
+    public  void submitEditForm() throws Throwable {
+        ingresarMaquinaria.LoadFieldsEdit();
+    }
 }
