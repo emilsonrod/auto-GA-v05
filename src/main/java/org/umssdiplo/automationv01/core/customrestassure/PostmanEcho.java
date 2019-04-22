@@ -16,6 +16,7 @@ public class PostmanEcho implements IEndPoint {
 
     private static PostmanEcho instance = new PostmanEcho();
     private RequestSpecification requestSpecification;
+    private RequestSpecification requestSpecificationBody;
 
     private PostmanEcho() {
         initializeRequestSpecification();
@@ -31,10 +32,13 @@ public class PostmanEcho implements IEndPoint {
                 .setBaseUri(PropertyAccessor.getInstance().getBaseUri())
                 .addHeader("my-sample-header",  "Lorem ipsum dolor sit amet")
                 .build();
+        requestSpecificationBody = new RequestSpecBuilder()
+                .setBaseUri(PropertyAccessor.getInstance().getBaseUri())
+                .setBody("diplomado testing").build();
     }
 
     @Override
     public RequestSpecification getRequestSpecification() {
-        return requestSpecification;
+        return requestSpecificationBody;
     }
 }

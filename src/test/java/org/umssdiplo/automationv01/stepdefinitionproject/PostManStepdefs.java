@@ -19,8 +19,20 @@ public class PostManStepdefs {
         response = HandleRequest.get(headerEndpoint);
     }
 
+    @Given("^POST postman endpoint is configured$")
+    public void postPostmanEndpointIsConfigured() throws Throwable {
+        response = HandleRequest.post();
+        String result = response.then().statusCode(200).extract().path("data");
+    }
+
     @Then("^the status code should be (\\d+)$")
     public void theStatusCodeShouldBe(int statusCode) throws Throwable {
         assertEquals(response.getStatusCode(), statusCode);
+    }
+
+    @Then("^the data path should be \"([^\"]*)\"$")
+    public void theStatusCodeShouldBe(String responseString) throws Throwable {
+        String result = response.then().statusCode(200).extract().path("data");
+        assertEquals(result, responseString);
     }
 }

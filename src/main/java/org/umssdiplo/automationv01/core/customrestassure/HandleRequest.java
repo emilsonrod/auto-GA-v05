@@ -53,4 +53,12 @@ public class HandleRequest {
                 .when()
                 .post(endpoint);
     }
+
+    public static Response post() {
+        return given()
+                .spec(REQUEST)
+                .contentType(ContentType.JSON)
+                .when()
+                .post("post");
+    }
 }

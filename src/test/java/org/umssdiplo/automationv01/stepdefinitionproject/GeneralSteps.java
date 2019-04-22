@@ -2,6 +2,7 @@ package org.umssdiplo.automationv01.stepdefinitionproject;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 
 public class GeneralSteps {
     @Given("^hasdfasdfundo$")
@@ -15,4 +16,5 @@ public class GeneralSteps {
         System.out.println("Testing cucumber java");
         System.out.println("=====================");
     }
+
 }
