@@ -44,4 +44,39 @@ public class StepsDefinitionPHPtravel {
     public void getPrice() throws Throwable {
         priceCalzado = pumaPage.getPrice();
     }
+
+    @And("^click first element$")
+    public void clickFirstElement() throws Throwable {
+        pumaPage.clickFirstElement();
+    }
+
+    @And("^click select size calzado$")
+    public void selectSizeCalzado() throws Throwable {
+        pumaPage.clickSelectSizeCalzado();
+    }
+
+    @And("^select size calzado$")
+    public void clickselectSizeCalzado() throws Throwable {
+        pumaPage.clickLinkSizeCalzado();
+    }
+
+    @And("^Add to bag$")
+    public void addToBag() throws Throwable {
+        pumaPage.clickAddBag();
+    }
+
+    @And("^Check cantidad$")
+    public void checkCantidad() throws Throwable {
+        pumaPage.verifyTextCantidad("Cantidad: 1");
+    }
+
+    @And("^Ver Carrito$")
+    public void verCarrito() throws Throwable {
+        pumaPage.clickVerCarrito();
+    }
+
+    @And("^Verify Card$")
+    public void verifyCard() throws Throwable {
+        pumaPage.verifyCard("Calzado de Fútbol X 18.3 TF","1 producto", "$1,329.00", "$1,428.00");
+    }
 }
